@@ -1,0 +1,45 @@
+{
+  "manifest_version": 2,
+  "name": "yokonoji-extensions",
+  "version": "1.0.0",
+  "description": "yokonoji.comで利用できるChrome拡張機能",
+
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+
+  "page_action": {
+    "default_icon": {
+      "32": "images/icon_32.png",
+      "48": "images/icon_48.png",
+      "128": "images/icon_128.png"
+    }
+  },
+
+  "icons": {
+    "32": "images/icon_32.png",
+    "48": "images/icon_48.png",
+    "128": "images/icon_128.png"
+  },
+
+  "content_scripts": [
+    {
+      "js": [
+        "content_script.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
+}
